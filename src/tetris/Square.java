@@ -4,13 +4,16 @@ import java.util.Objects;
 
 public class Square {
 
+    // Fields storing information about location of a Square.
     private int x,y;
 
+    // Class constructor
     public Square (int x, int y) {
         this.x = x;
         this.y = y;
     }
 
+    // Getters and setters of private fields
     public int getX() {
         return x;
     }
@@ -27,7 +30,10 @@ public class Square {
         this.y = y;
     }
 
+    // Method checks if the Square is next to another Squere from an array of Squares in a chosen direction.
     public boolean isNextToASquare(int direction, Square[] squaresTable){
+
+        // If direction is equal to 0, it means that method checks if any Square is below the Square.
         if (direction == 0) {
             for (Square sq : squaresTable) {
                 if (this.x == sq.x && this.y + 1 == sq.y) {
